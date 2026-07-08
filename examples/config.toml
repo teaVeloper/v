@@ -1,0 +1,15 @@
+[defaults]
+recursive = true
+vcsignore = true
+noise = true
+
+[types]
+py = ["py"]
+docs = ["md", "markdown", "rst"]
+web = ["js", "ts", "tsx", "jsx", "css", "html"]
+
+[noise]
+dirs = ["site", ".cache"]
+files = []
+globs = ["*.generated.py"]
+

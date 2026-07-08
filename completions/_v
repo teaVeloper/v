@@ -1,0 +1,18 @@
+#compdef v
+
+local -a groups
+groups=("${(@f)$(_v_type_groups)}")
+
+_arguments -s \
+  '(-t --type)'{-t,--type}'[extension or configured type alias]:type:' \
+  '(-g --group)'{-g,--group}'[configured type group]:group:(( ${groups[@]} ))' \
+  '--include-init[include Python __init__.py files]' \
+  '--novcsignore[do not honor VCS ignore files]' \
+  '--no-vcsignore[do not honor VCS ignore files]' \
+  '--vcsignore[honor VCS ignore files]' \
+  '--no-noise[disable configured noise exclusions]' \
+  '--noise[enable configured noise exclusions]' \
+  '--recursive[search recursively]' \
+  '--no-recursive[search only one directory level]' \
+  '*:path:_files'
+
